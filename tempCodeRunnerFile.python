@@ -1,0 +1,22 @@
+# Given values
+seek_time = 30  # Average seek time in milliseconds
+rotation_time = 20  # Full rotation time in milliseconds
+average_rotation_delay = rotation_time / 2  # Average rotational latency in milliseconds
+track_size = 32  # Track size in kilobytes
+program_size = 64  # Program size in kilobytes
+
+# Calculations for a 2kB page size
+page_size_2kB = 2  # Page size in kilobytes
+num_pages_2kB = program_size / page_size_2kB
+total_seek_time_2kB = num_pages_2kB * seek_time
+total_rotation_time_2kB = num_pages_2kB * average_rotation_delay
+total_time_2kB = total_seek_time_2kB + total_rotation_time_2kB
+
+# Calculations for a 4kB page size
+page_size_4kB = 4  # Page size in kilobytes
+num_pages_4kB = program_size / page_size_4kB
+total_seek_time_4kB = num_pages_4kB * seek_time
+total_rotation_time_4kB = num_pages_4kB * average_rotation_delay
+total_time_4kB = total_seek_time_4kB + total_rotation_time_4kB
+
+total_time_2kB, total_time_4kB
